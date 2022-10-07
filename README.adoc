@@ -88,7 +88,6 @@ Il est possible de créer un projet Gitlab uniquement pour exécuter la CI et le
 
 image:gitlab-ci-pages-from-github.png[]
 
-
 https://gitlab.com/marc-bouvier/template-asciidoctor-dockerized-gitlab-pages/-/pipelines
 
 == Paramétrage de Github Pages
