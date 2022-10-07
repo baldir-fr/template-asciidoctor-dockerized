@@ -1,4 +1,6 @@
-= __________
+= template-asciidoctor-dockerized
+
+Ce dépôt a été généré à partir du template : https://github.com/baldir-fr/template-asciidoctor-dockerized
 
 * Documents générés
 ** link:docs/index.html[Slides générées]
@@ -6,6 +8,10 @@
 ** link:docs/output.epub[Ebook]
 ** link:docs/output.docbook.xml[Docbook]
 ** link:docs/output.docx[Docx]
+
+== Comment écrire du contenu
+
+Modifier les fichiers présents dans `01-slides`
 
 == Pré-requis pour construire les exemples
 
