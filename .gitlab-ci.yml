@@ -1,0 +1,34 @@
+build-adoc:
+  image: asciidoctor/docker-asciidoctor
+  script:
+    - make ci-adoc
+  artifacts:
+    untracked: false
+    expire_in: 30 days
+    paths:
+      - "docs"
+
+build-pandoc:
+  image:
+    name: pandoc/core
+    entrypoint: [ "/bin/sh", "-c" ]
+  needs:
+    - build-adoc
+  script: pandoc --from docbook --to docx --toc --highlight-style tango -o docs/output.docx docs/output.docbook.xml --resource-path=docs
+  artifacts:
+    untracked: false
+    expire_in: 30 days
+    paths:
+      - "docs"
+
+pages:
+  image: alpine
+  needs:
+    - build-adoc
+    - build-pandoc
+  script:
+    - mkdir -p public
+    - cp -R docs/* public
+  artifacts:
+    paths:
+      - "public"
