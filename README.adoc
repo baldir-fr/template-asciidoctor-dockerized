@@ -80,6 +80,10 @@ pandoc --from docbook \
   docs/output.docbook.xml
 ----
 
+== Exemple d'utilisation avec Gitlab CI + Gitlab Pages
+
+https://gitlab.com/marc-bouvier/template-asciidoctor-dockerized-gitlab-pages/-/pipelines
+
 == Paramétrage de Github Pages
 
 * Dans le menu "Settings" de Github.
