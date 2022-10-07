@@ -88,6 +88,6 @@ image::github-pages-setup.png[Capture d'écran du menu "Settings" de Github. Sec
 * https://docs.asciidoctor.org/reveal.js-converter/latest/converter/features/[Asciidoctor revealjs — écrire une présentation]
 * https://docs.asciidoctor.org/reveal.js-converter/latest/converter/revealjs-options/[Asciidoctor revealjs — configurer revealjs]
 * https://docs.asciidoctor.org/asciidoc/latest/directives/include-tagged-regions/#tagging-regions[Asciidoctor — inclure des snippets à l'aide de régions]
-
-
+* https://docs.asciidoctor.org/asciidoc/latest/directives/ifdef-ifndef/[Asciidoc — Conditionals / ifdef and ifndef Directives]
+* https://mrduguo.github.io/asciidoctor.org/docs/asciidoctor-revealjs/#content-meant-for-multiple-back-ends[Asciidoctor-revealjs — Content meant for multiple back-ends]
 

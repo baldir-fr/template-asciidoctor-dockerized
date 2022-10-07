@@ -39,3 +39,18 @@ include::../docker-compose.yml[]
 Contenu n'apparaissant pas dans les slides
 Mais dans les notes de présentation ou dans les pdf, ebook, docbook.
 --
+
+Ce chapitre contient des notes de présentation.
+
+ifdef::backend-revealjs[]
+
+== Généré depuis le même fichier Asciidoc
+Chapitre uniquement généré dans les slides.
+
+* link:index.html[Slides générées]
+* link:output.pdf[Pdf]
+* link:output.epub[Ebook]
+* link:output.docbook.xml[Docbook]
+* link:output.docx[Docx]
+
+endif::[]
