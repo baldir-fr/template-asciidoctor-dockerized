@@ -80,7 +80,14 @@ pandoc --from docbook \
   docs/output.docbook.xml
 ----
 
-== Exemple d'utilisation avec Gitlab CI + Gitlab Pages
+== Utilisation avec Gitlab CI + Gitlab Pages
+
+Il est possible de créer un projet Gitlab uniquement pour exécuter la CI et le déploiement sur des Gitlab pages.
+
+- Run CI/CD for external repository
+
+image:gitlab-ci-pages-from-github.png[]
+
 
 https://gitlab.com/marc-bouvier/template-asciidoctor-dockerized-gitlab-pages/-/pipelines
 
