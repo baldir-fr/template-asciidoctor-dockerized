@@ -1,13 +1,16 @@
 = template-asciidoctor-dockerized
 
+Génération de slides, pdf, ebook, docx à l'aide de Asciidoctor et docker compose.
+
 Ce dépôt a été généré à partir du template : https://github.com/baldir-fr/template-asciidoctor-dockerized
 
-* Documents générés
-** link:docs/index.html[Slides générées]
-** link:docs/output.pdf[Pdf]
-** link:docs/output.epub[Ebook]
-** link:docs/output.docbook.xml[Docbook]
-** link:docs/output.docx[Docx]
+== Documents générés
+
+* link:docs/index.html[Slides générées]
+* link:docs/output.pdf[Pdf]
+* link:docs/output.epub[Ebook]
+* link:docs/output.docbook.xml[Docbook]
+* link:docs/output.docx[Docx]
 
 == Comment écrire du contenu
 
