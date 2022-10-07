@@ -1,4 +1,4 @@
-all: 01-slides 01-pdf 01-epub
+all: 01-slides 01-pdf 01-epub 01-docbook
 .PHONY: 01-slides
 
 01-slides :
@@ -9,3 +9,5 @@ all: 01-slides 01-pdf 01-epub
 	docker compose run --rm build-epub
 01-docbook:
 	docker compose run --rm build-docbook
+01-docx:
+	pandoc --from docbook --to docx --toc --highlight-style tango -o docs/output.docx docs/output.docbook.xml --resource-path=docs

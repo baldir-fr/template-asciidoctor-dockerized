@@ -3,7 +3,6 @@ version: "3.8"
 
 services:
 
-  # tag::01_slides[]
   build-slides:
     image: "asciidoctor/docker-asciidoctor"
     volumes:
@@ -15,7 +14,6 @@ services:
       - "01-slides/index.adoc"
       - "-o"
       - "docs/index.html"
-  # end::01_slides[]
 
   build-pdf:
     image: "asciidoctor/docker-asciidoctor"
@@ -25,7 +23,7 @@ services:
       - "asciidoctor-pdf"
       - "01-slides/index.adoc"
       - "-o"
-      - "docs/bbl-docker-pour-le-developpeur.pdf"
+      - "docs/output.pdf"
 
   build-epub:
     image: "asciidoctor/docker-asciidoctor"
@@ -35,7 +33,8 @@ services:
       - "asciidoctor-epub3"
       - "01-slides/index.adoc"
       - "-o"
-      - "docs/bbl-docker-pour-le-developpeur.epub"
+      - "docs/output.epub"
+
   build-docbook:
     image: "asciidoctor/docker-asciidoctor"
     volumes:
@@ -46,63 +45,4 @@ services:
       - "docbook"
       - "01-slides/index.adoc"
       - "-o"
-      - "docs/bbl-docker-pour-le-developpeur.docbook.xml"
-  # tag::01-rabbitmq[]
-  01-rabbitmq:
-    # http://localhost:15672
-    image: rabbitmq:3-management
-    container_name: rabbitmq
-    ports:
-      - "5672:5672"
-      - "15672:15672"
-    # guest / guest
-  # end::01-rabbitmq[]
-
-  # tag::05-code-server[]
-  05-code-server:
-    # http://localhost:8094
-    image: registry.gitlab.com/crafting-software/online-code/js
-    user: code
-    ports:
-      - "8094:8080"
-    environment:
-      - PASSWORD=testing
-  # end::05-code-server[]
-
-  # tag::07_java_8[]
-  07-movie-rental-java-8:
-    image: "maven:3-openjdk-8-slim"
-    working_dir: "/java-app"
-    volumes:
-      - "./07-movie-rental-java-8:/java-app"
-      - "./.volumes/07-movie-rental-java-8-.m2:/root/.m2"
-    command:
-      - "mvn"
-      #      - "-Dmaven.compiler.source=8"
-      - "clean"
-      - "test"
-  # end::07_java_8[]
-
-  # tag::07_java_17[]
-  07-movie-rental-java-17:
-    image: "maven:3-openjdk-17-slim"
-    working_dir: "/java-app"
-    volumes:
-      - "./07-movie-rental-java-17:/java-app"
-      - "./.volumes/07-movie-rental-java-17-.m2:/root/.m2"
-    command:
-      - "mvn"
-#      - "-Dmaven.compiler.source=17"
-      - "clean"
-      - "test"
-  # end::07_java_17[]
-
-  # tag::09_tiddlywiki[]
-  09-tiddlywiki:
-    # http://localhost:8082
-    image: "nicolaw/tiddlywiki"
-    ports:
-      - "8082:8080"
-    volumes:
-      - "./09-tiddlywiki:/var/lib/tiddlywiki"
-  # end::09_tiddlywiki[]
+      - "docs/output.docbook.xml"

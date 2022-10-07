@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?asciidoc-toc?>
+<?asciidoc-numbered?>
+<article xmlns="http://docbook.org/ns/docbook" xmlns:xl="http://www.w3.org/1999/xlink" version="5.0" xml:lang="en">
+<info>
+<title>TODO </title>
+<subtitle>présentation</subtitle>
+<date>2022-10-07</date>
+<author>
+<personname>
+<firstname>Auteur</firstname>
+</personname>
+</author>
+<authorinitials>A</authorinitials>
+</info>
+<section xml:id="_slide_1">
+<title>Slide 1</title>
+<simpara>Exemple d&#8217;image</simpara>
+<informalfigure>
+<mediaobject>
+<imageobject>
+<imagedata fileref="assets/sample.jpg"/>
+</imageobject>
+<textobject><phrase>sample</phrase></textobject>
+</mediaobject>
+</informalfigure>
+<section xml:id="_slide_1_2">
+<title>Slide 1.2</title>
+<simpara>Exemple de code snippet avec import.</simpara>
+<programlisting language="yml" linenumbering="unnumbered">version: "3.8"
+
+
+services:
+
+  build-slides:
+    image: "asciidoctor/docker-asciidoctor"
+    volumes:
+      - ./:/documents/
+    command:
+      - "asciidoctor-revealjs"
+      - "-a"
+      - "revealjsdir=https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.9.2"
+      - "01-slides/index.adoc"
+      - "-o"
+      - "docs/index.html"
+
+  build-pdf:
+    image: "asciidoctor/docker-asciidoctor"
+    volumes:
+      - ./:/documents/
+    command:
+      - "asciidoctor-pdf"
+      - "01-slides/index.adoc"
+      - "-o"
+      - "docs/output.pdf"
+
+  build-epub:
+    image: "asciidoctor/docker-asciidoctor"
+    volumes:
+      - ./:/documents/
+    command:
+      - "asciidoctor-epub3"
+      - "01-slides/index.adoc"
+      - "-o"
+      - "docs/output.epub"
+
+  build-docbook:
+    image: "asciidoctor/docker-asciidoctor"
+    volumes:
+      - ./:/documents/
+    command:
+      - "asciidoctor"
+      - "-b"
+      - "docbook"
+      - "01-slides/index.adoc"
+      - "-o"
+      - "docs/output.docbook.xml"</programlisting>
+</section>
+</section>
+<section xml:id="_slide_2">
+<title>Slide 2</title>
+<para role="notes">
+<simpara>Contenu n&#8217;apparaissant pas dans les slides
+Mais dans les notes de présentation ou dans les pdf, ebook, docbook.</simpara>
+</para>
+</section>
+</article>

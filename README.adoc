@@ -1,10 +1,11 @@
-= Docker sur le poste du développeur
+= __________
 
-* https://baldir-fr.github.io/bbl-docker-pour-le-developpeur[Les slides en live]
-* link:docs/bbl-docker-pour-le-developpeur.pdf[Version PDF]
-* link:docs/bbl-docker-pour-le-developpeur.epub[Version Epub]
-* link:https://www.youtube.com/watch?v=P1xElO5RKW0[Captation vidéo]
-
+* Documents générés
+** link:docs/index.html[Slides générées]
+** link:docs/output.pdf[Pdf]
+** link:docs/output.epub[Ebook]
+** link:docs/output.docbook.xml[Docbook]
+** link:docs/output.docx[Docx]
 
 == Pré-requis pour construire les exemples
 
@@ -16,7 +17,6 @@ Optionnel
 * GNU Make
 
 == Génération des slides
-
 
 [source,shell]
 ----
@@ -62,124 +62,14 @@ Après avoir <<_generation_du_docbook,généré le docbook>>
 
 [source,shell]
 ----
-pandoc --from docbook --to docx --toc --highlight-style tango -o docs/bbl-docker-pour-le-developpeur.docx docs/bbl-docker-pour-le-developpeur.docbook.xml
+pandoc --from docbook \
+  --to docx \
+  --toc \
+  --highlight-style tango \
+  -o docs/output.docx \
+  --resource-path=docs \
+  docs/output.docbook.xml
 ----
-
-== Générer le diagramme de docker compose
-
-[source,shell]
-----
-docker run --rm -it --name dcv -v $(pwd):/input pmsipilot/docker-compose-viz render -m image -f docker-compose.yml
-----
-
-
-image::docker-compose.png[]
-
-== Démos
-
-=== RabbitMQ
-
-[source,shell]
-----
-docker compose up 01-rabbitmq
-----
-
-* interface de management :
-http://localhost:15672
-** guest / guest
-* localhost:5672
-
-=== Nextcloud + postgreSQL
-
-[source,shell]
-----
-docker compose -f 02-tester-logiciel-compliqué/nextcloud/docker-compose.yml up
-----
-
-* http://localhost:80
-** admin / admin
-
-=== TestContainers
-
-[source,shell]
-----
-cd 03-test-containers/spring-boot/
-./gradlew build
-----
-
-=== Code Server
-
-
-[source,shell]
-----
-docker compose up -d 05-code-server
-----
-
-* http://localhost:8094
-
-=== Conversion de .mov en .gif
-
-[source,shell]
-----
-alias video2gif='sudo docker run -v=`pwd`:/tmp/ffmpeg kafebob/video2gif'
-video2gif source_video.mov target_video.gif
-----
-
-=== Movie Rental Java 8
-
-[source,shell]
-----
-docker compose run 07-movie-rental-java-8
-----
-
-=== Movie Rental Java 17
-
-[source,shell]
-----
-docker compose run 07-movie-rental-java-17
-----
-
-=== Tiddlywiki
-
-[source,shell]
-----
-docker compose up -d 09-tiddlywiki
-----
-
-* http://localhost:8082
-
-=== Busybox
-
-[source,shell]
-----
-docker run -it --rm busybox
-----
-
-=== Alpine
-
-[source,shell]
-----
-docker run -it --rm alpine
-----
-
-=== Vuejs + Keycloak + Spring-Boot
-
-`etc/hosts`
-
-[source]
-----
-127.0.0.1 kubernetes.docker.internal
-----
-
-[source,shell]
-----
-docker compose -f 11-simuler-environnement-cible/docker-for-local-development-bbl-main/docker-compose.yml up -d
-----
-
-* Keycloak : http://kubernetes.docker.internal:8080
-* Frontend VueJS :
-http://kubernetes.docker.internal:5173
-* Backend Spring-boot : http://kubernetes.docker.internal:8081
 
 == Ressource complémentaires
 
