@@ -1,22 +1,25 @@
 = template-asciidoctor-dockerized
 
-Génération de slides, pdf, ebook, docx à l'aide de Asciidoctor et docker compose.
+Génération de slides, pdf, ebook, docx à l'aide de https://docs.asciidoctor.org/asciidoctor/latest/[Asciidoctor], https://docs.asciidoctor.org/reveal.js-converter/latest/[RevealJs] et https://docs.docker.com/compose/[Docker Compose].
 
 Ce dépôt a été généré à partir du template : https://github.com/baldir-fr/template-asciidoctor-dockerized
 
 == Documents générés
 
-* link:docs/index.html[Slides générées]
+* link:docs/index.html[Slides générées au format HTML]
 * link:docs/output.pdf[Pdf]
 * link:docs/output.epub[Ebook]
 * link:docs/output.docbook.xml[Docbook]
 * link:docs/output.docx[Docx]
 
-== Comment écrire du contenu
+== Écrire du contenu
 
-Modifier les fichiers présents dans `01-slides`
+Modifier les fichiers présents dans `01-slides`.
+Voir la section <<_ressources-asciidoctor-complementaires,Ressources Asciidoctor complémentaires>> pour démarrer avec Asciidoctor et RevealJs.
 
-== Pré-requis pour construire les exemples
+== Génération du contenu
+
+=== Pré-requis pour construire les exemples
 
 * Docker Engine 19.03.0+
 * Docker compose
@@ -25,7 +28,7 @@ Optionnel
 
 * GNU Make
 
-== Génération des slides
+=== Génération des slides
 
 [source,shell]
 ----
@@ -34,7 +37,7 @@ docker compose run build-slides
 make 01-slides
 ----
 
-== Génération du Pdf
+=== Génération du Pdf
 
 [source,shell]
 ----
@@ -43,7 +46,7 @@ docker compose run --rm build-slides; rm -rf docs/assets;cp -r 01-slides/assets 
 make 01-pdf
 ----
 
-== Génération du E-book
+=== Génération du E-book
 
 [source,shell]
 ----
@@ -53,7 +56,7 @@ make 01-epub
 ----
 
 [#_generation_du_docbook]
-== Génération du docbook
+=== Génération du docbook
 
 
 [source,shell]
@@ -63,7 +66,7 @@ docker compose run build-docbook
 make 01-docbook
 ----
 
-== Génération docx
+=== Génération docx
 
 Prérequis : avoir pandoc installé (je n'ai pas encore réussi à le faire fonctionner avec docker)
 
@@ -80,17 +83,41 @@ pandoc --from docbook \
   docs/output.docbook.xml
 ----
 
-== Utilisation avec Gitlab CI + Gitlab Pages
+== Déploiement
+
+=== Gitlab
+
+Si ce dépôt est sur Gitlab.
+
+La pipeline `.gitlab-ci.yml` est préconfigurée pour
+
+* copier les assets
+* générer les slides au format HTML
+* générer le PDF
+* générer l'ebook au format epub
+* générer le schéma docbook
+* générer le docx (à partir du schéma docbook)
+* publier l'ensemble du contenu sur la gitlab page correspondant au projet
+
+=== Gitlab CI + Gitlab Pages depuis un dépôt Git externe
 
 Il est possible de créer un projet Gitlab uniquement pour exécuter la CI et le déploiement sur des Gitlab pages.
+Dans ce mode, Gitlab (premium) va créer un projet uniquement pour executer la pipeline déclarée dans .gitlab-ci.yml[`.gitlab-ci.yml`].
 
-- Run CI/CD for external repository
+Pour que le déclenchement automatique lors de changements 
+
+- Run https://docs.gitlab.com/ee/ci/ci_cd_for_external_repos/index.html[CI/CD for external repository]
 
 image:gitlab-ci-pages-from-github.png[]
 
 https://gitlab.com/marc-bouvier/template-asciidoctor-dockerized-gitlab-pages/-/pipelines
 
-== Paramétrage de Github Pages
+=== Github Pages "classique"
+
+Dans ce mode de déploiement, le contenu devra être généré au préalable.
+C'est à dire que le contenu du dossier `docs` est généré sur le dépôt local du développeur, puis commit et push.
+
+Cette configuration génère un site jekyll à partir d'une github action préconfigurée.
 
 * Dans le menu "Settings" de Github.
 ** Section "Pages"
@@ -100,6 +127,29 @@ https://gitlab.com/marc-bouvier/template-asciidoctor-dockerized-gitlab-pages/-/p
 
 image::github-pages-setup.png[Capture d'écran du menu "Settings" de Github. Section "Pages" est sélectionnée. Build and deployment : Source : Deploy from branch. Branch : `main`, `/docs`]
 
+=== Github Pages via Github Actions
+
+Dans ce mode de déploiement, une Github Action est définie dans `.github/workflows/`.
+Elle est préconfigurée pour
+
+* copier les assets
+* générer les slides au format HTML
+* générer le PDF
+* générer l'ebook au format epub
+* générer le schéma docbook
+* générer le docx (à partir du schéma docbook)
+* publier l'ensemble du contenu sur la gitlab page correspondant au projet
+
+==== Configuration de Github Pages depuis une Action
+
+* Dans le menu "Settings" de Github.
+** Section "Pages"
+*** Build and deployment
+**** Source : Github Actions
+
+image::github-pages-action-setup.png[Capture d'écran du menu "Settings" de Github. Section "Pages" est sélectionnée. Build and deployment : Source : Github Actions.]
+
+[#_ressources-asciidoctor-complementaires]
 == Ressources Asciidoctor complémentaires
 
 * https://github.com/asciidoctor/docker-asciidoctor/blob/main/README.adoc[docker-asciidoctor]
