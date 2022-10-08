@@ -12,15 +12,28 @@ jobs:
       - uses: actions/checkout@v3
       - name: Use asciidoctor to build content
         run: |
+          ls -al docs
           make ci-adoc
           ls -al docs
+      - name: Upload a Build Artifact
+        uses: actions/upload-artifact@v3.1.0
+        with:
+          name: docs
+          path: docs
 
   build-pandoc:
     needs: build-adoc
     runs-on: ubuntu-latest
     container: pandoc/core
     steps:
+      - name: Download a Build Artifact
+        uses: actions/download-artifact@v3.0.0
+        with:
+          name: docs
+          # path: # optional      
       - name: Use pandoc to convert content
         run: |
+          ls -al
+          ls -al docs
           pandoc --from docbook --to docx --toc --highlight-style tango -o docs/output.docx docs/output.docbook.xml --resource-path=docs
           ls -al docs
