@@ -1,4 +1,4 @@
-name: CI
+name: Generate and deploy static content to Pages
 on:
   push:
     branches: [ "main" ]
