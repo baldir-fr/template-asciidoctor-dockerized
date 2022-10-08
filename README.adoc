@@ -2,6 +2,8 @@
 = template-asciidoctor-dockerized
 
 :hide-uri-scheme:
+:lang: FR
+:imagesdir: readme/assets
 
 :back_to_top_target: top-target
 :back_to_top_label: ⬆ Retour au début
@@ -23,8 +25,16 @@ Ce dépôt a été généré à partir du template : https://github.com/baldir-f
 
 == Écrire du contenu
 
-Modifier les fichiers présents dans `01-slides`.
+Modifier les fichiers présents dans link:01-slides/[`01-slides`].
+
 Voir la section <<_ressources-asciidoctor-complementaires,Ressources Asciidoctor complémentaires>> pour démarrer avec Asciidoctor et RevealJs.
+
+{back_to_top}
+
+[#_ressources-asciidoctor-complementaires]
+== Ressources Asciidoctor complémentaires
+
+include::readme/ressources-asciidoctor-complementaires.adoc[➡️ Ressources Asciidoctor complémentaires]
 
 {back_to_top}
 
@@ -98,12 +108,5 @@ pandoc --from docbook \
 == Déploiement
 
 include::readme/deploiement.adoc[➡️ Méthodes de déploiement]
-
-{back_to_top}
-
-[#_ressources-asciidoctor-complementaires]
-== Ressources Asciidoctor complémentaires
-
-include::readme/ressources-asciidoctor-complementaires.adoc[➡️ Ressources Asciidoctor complémentaires]
 
 {back_to_top}

@@ -1,4 +1,4 @@
-=== GitHub Pages via GitHub Actions
+= GitHub Pages via GitHub Actions
 
 Dans ce mode de déploiement, une Github Action est définie dans link:.github/workflows/generate-docs-and-publish-with-gitlab-pages.yml[`.github/workflows/generate-docs-and-publish-with-gitlab-pages.yml`].
 
@@ -12,11 +12,11 @@ Elle est préconfigurée pour
 * Générer le docx (à partir du schéma docbook)
 * Publier l'ensemble du contenu sur la gitlab page correspondant au projet
 
-==== Configuration de Github Pages depuis une Action
+== Configuration de Github Pages depuis une Action
 
 * Dans le menu "Settings" de Github.
 ** Section "Pages"
 *** Build and deployment
 **** Source : GitHub Actions
 
-image::assets/github-pages-action-setup.png[Capture d'écran du menu "Settings" de Github. Section "Pages" est sélectionnée. Build and deployment : Source : Github Actions.]
+image::github-pages-action-setup.png[Capture d'écran du menu "Settings" de Github. Section "Pages" est sélectionnée. Build and deployment : Source : Github Actions.]

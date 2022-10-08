@@ -1,4 +1,4 @@
-=== Gitlab
+= Gitlab
 
 Si ce dépôt est sur Gitlab.
 

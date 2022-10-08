@@ -1,4 +1,6 @@
 
+:leveloffset: +2
+
 include::deploiement-gitlab-ci.adoc[]
 
 include::deploiement-gitlab-ci-for-external-repos.adoc[]
@@ -6,3 +8,5 @@ include::deploiement-gitlab-ci-for-external-repos.adoc[]
 include::deploiement-github-pages-classic.adoc[]
 
 include::deploiement-github-pages-actions.adoc[]
+
+:leveloffset: -2

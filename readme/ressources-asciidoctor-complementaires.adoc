@@ -1,8 +1,8 @@
 
-* https://github.com/asciidoctor/docker-asciidoctor/blob/main/README.adoc[docker-asciidoctor]
-* https://docs.asciidoctor.org/asciidoctor/latest/cli/:[Asciidoc CLI]
 * https://docs.asciidoctor.org/reveal.js-converter/latest/converter/features/[Asciidoctor RevealJs — écrire une présentation]
 * https://docs.asciidoctor.org/reveal.js-converter/latest/converter/revealjs-options/[Asciidoctor RevealJs — configurer RevealJs]
 * https://docs.asciidoctor.org/asciidoc/latest/directives/include-tagged-regions/#tagging-regions[Asciidoctor — inclure des snippets à l'aide de régions]
+* https://github.com/asciidoctor/docker-asciidoctor/blob/main/README.adoc[Image Docker `docker-asciidoctor`]
+* https://docs.asciidoctor.org/asciidoctor/latest/cli/:[Asciidoc CLI]
 * https://docs.asciidoctor.org/asciidoc/latest/directives/ifdef-ifndef/[Asciidoc — Conditionals / ifdef and ifndef Directives]
 * https://mrduguo.github.io/asciidoctor.org/docs/asciidoctor-revealjs/#content-meant-for-multiple-back-ends[Asciidoctor-RevealJs — Content meant for multiple back-ends]
