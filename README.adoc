@@ -4,7 +4,7 @@
 :is-root: true
 :hide-uri-scheme:
 :lang: FR
-:imagesdir: {docdir}/readme/assets
+:imagesdir: readme/assets
 
 :back_to_top_target: top-target
 :back_to_top_label: ⬆ Retour au début
