@@ -10,6 +10,11 @@
 :back_to_top_label: ⬆ Retour au début
 :back_to_top: <<main_title,{back_to_top_label}>>
 
+[horizontal]
+Github:: image:https://github.com/baldir-fr/template-asciidoctor-dockerized/actions/workflows/generate-docs-and-publish-with-github-pages.yml/badge.svg[Generate and deploy static content to Pages,link=https://github.com/baldir-fr/template-asciidoctor-dockerized/actions/workflows/generate-docs-and-publish-with-github-pages.yml]
+
+Gitlab:: image:https://gitlab.com/marc-bouvier/template-asciidoctor-dockerized/badges/main/pipeline.svg[link="https://gitlab.com/marc-bouvier/template-asciidoctor-dockerized/-/commits/main",title="gitlab pipeline status"]
+
 Génération de slides, pdf, ebook, docx à l'aide de https://docs.asciidoctor.org/asciidoctor/latest/[Asciidoctor,window=_blank], https://docs.asciidoctor.org/reveal.js-converter/latest/[RevealJs,window=_blank] et https://docs.docker.com/compose/[Docker Compose,window=_blank].
 
 Ce dépôt a été généré à partir du template : https://github.com/baldir-fr/template-asciidoctor-dockerized[window=_blank]
