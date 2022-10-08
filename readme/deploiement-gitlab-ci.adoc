@@ -18,3 +18,9 @@ Le pipeline link:{link-gitlab-ci-yml}[`.gitlab-ci.yml`] est préconfigurée pour
 * Générer le schéma docbook
 * Générer le docx (à partir du schéma docbook)
 * Publier l'ensemble du contenu sur la gitlab page correspondant au projet
+
+
+Exemple du template utilisé sur Gitlab
+
+Site déployé sur Gitlab Pages:: https://marc-bouvier.gitlab.io/template-asciidoctor-dockerized/[window=_blank]
+Pipeline de CI-CD sur Gitlab:: https://gitlab.com/marc-bouvier/template-asciidoctor-dockerized/-/pipelines[window=_blank]
