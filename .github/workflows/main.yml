@@ -30,7 +30,7 @@ jobs:
         uses: actions/download-artifact@v3.0.0
         with:
           name: docs
-          # path: # optional      
+          path: docs     
       - name: Use pandoc to convert content
         run: |
           ls -al
