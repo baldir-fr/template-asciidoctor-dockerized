@@ -1,14 +1,9 @@
-[#_main_title]
 = template-asciidoctor-dockerized
 
 :is-root: true
 :hide-uri-scheme:
 :lang: FR
 :imagesdir: readme/assets
-
-:back_to_top_target: top-target
-:back_to_top_label: ⬆ Retour au début
-:back_to_top: <<_main_title,{back_to_top_label}>>
 
 [horizontal]
 Github:: image:https://github.com/baldir-fr/template-asciidoctor-dockerized/actions/workflows/generate-docs-and-publish-with-github-pages.yml/badge.svg[Generate and deploy static content to Pages,link="https://github.com/baldir-fr/template-asciidoctor-dockerized/actions/workflows/generate-docs-and-publish-with-github-pages.yml",window="_blank"]
@@ -27,22 +22,16 @@ Ce dépôt a été généré à partir du template : https://github.com/baldir-f
 * link:docs/output.docbook.xml[Docbook,window=_blank]
 * link:docs/output.docx[Docx,window=_blank]
 
-{back_to_top}
-
 == Écrire du contenu
 
 Modifier les fichiers présents dans link:_content/[`_content/`].
 
 Voir la section <<_ressources-asciidoctor-complementaires,Ressources Asciidoctor complémentaires>> pour démarrer avec Asciidoctor et RevealJs.
 
-{back_to_top}
-
 [#_ressources-asciidoctor-complementaires]
 == Ressources Asciidoctor complémentaires
 
 include::readme/ressources-asciidoctor-complementaires.adoc[➡️ Ressources Asciidoctor complémentaires]
-
-{back_to_top}
 
 == Génération du contenu
 
@@ -120,10 +109,6 @@ make dc-docx
 make docx
 ----
 
-{back_to_top}
-
 == Déploiement
 
 include::readme/deploiement.adoc[➡️ Méthodes de déploiement]
-
-{back_to_top}
