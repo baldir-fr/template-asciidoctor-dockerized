@@ -1,6 +1,9 @@
 = Github Pages "classique"
 
 :imagesdir: readme/assets
+ifdef::env-github[]
+:imagesdir: ../readme/assets
+endif::[]
 
 Dans ce mode de déploiement, le contenu devra être généré au préalable.
 

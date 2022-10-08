@@ -1,6 +1,10 @@
 = Gitlab CI + Gitlab Pages depuis un dépôt Git externe
 
 :imagesdir: readme/assets
+ifdef::env-github[]
+:imagesdir: ../readme/assets
+endif::[]
+
 
 Il est possible de créer un projet Gitlab uniquement pour exécuter la CI et le déploiement sur des Gitlab pages.
 
