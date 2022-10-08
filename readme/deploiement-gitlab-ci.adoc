@@ -1,0 +1,13 @@
+=== Gitlab
+
+Si ce dépôt est sur Gitlab.
+
+Le pipeline link:.gitlab-ci.yml[`.gitlab-ci.yml`] est préconfigurée pour
+
+* Copier les assets
+* Générer les slides au format HTML
+* Générer le PDF
+* Générer l'e-book au format epub
+* Générer le schéma docbook
+* Générer le docx (à partir du schéma docbook)
+* Publier l'ensemble du contenu sur la gitlab page correspondant au projet

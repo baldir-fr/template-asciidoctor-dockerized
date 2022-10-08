@@ -1,0 +1,15 @@
+=== Github Pages "classique"
+
+Dans ce mode de déploiement, le contenu devra être généré au préalable.
+
+C'est-à-dire que le contenu du dossier link:docs[`docs`] est généré sur le dépôt local du développeur, puis commit et push.
+
+Cette configuration génère un site jekyll à partir d'une github action préconfigurée.
+
+* Dans le menu "Settings" de Github.
+** Section "Pages"
+*** Build and deployment
+**** Source : Deploy from branch
+**** Branch : `main`, `/docs`
+
+image::github-pages-setup.png[Capture d'écran du menu "Settings" de Github. Section "Pages" est sélectionnée. Build and deployment : Source : Deploy from branch. Branch : `main`, `/docs`]
