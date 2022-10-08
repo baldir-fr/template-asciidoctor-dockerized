@@ -14,9 +14,7 @@ jobs:
         run: |
           rm -rf docs
           make ci-adoc
-          ls -al
-          ls -al docs
-      - name: Upload a Build Artifact
+      - name: Upload `docs` Build Artifact
         uses: actions/upload-artifact@v3.1.0
         with:
           name: docs
@@ -27,15 +25,30 @@ jobs:
     runs-on: ubuntu-latest
     container: pandoc/core
     steps:
-      - name: Download a Build Artifact
+      - name: Download `docs` Build Artifact
         uses: actions/download-artifact@v3.0.0
         with:
           name: docs
           path: docs     
-      - name: Use pandoc to convert content
+      - name: Generate docx
         run: |
-          ls -al
-          ls -al docs
           pandoc --from docbook --to docx --toc --highlight-style tango -o docs/output.docx docs/output.docbook.xml --resource-path=docs
-          ls -al
-          ls -al docs
+      - name: Upload docs-with-docx Build Artifact
+        uses: actions/upload-artifact@v3.1.0
+        with:
+          name: docs-with-docx
+          path: docs
+
+  deploy-site:
+    needs: [ "build-adoc", "build-pandoc"]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download docs-with-docx Build Artifact
+        uses: actions/download-artifact@v3.0.0
+        with:
+          name: docs-with-docx
+          path: docs  
+      - name: Deploy GitHub Pages site
+        uses: actions/deploy-pages@v1.2.1
+        
+
