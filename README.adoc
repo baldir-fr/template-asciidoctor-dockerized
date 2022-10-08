@@ -1,5 +1,11 @@
+[#main_title]
 = template-asciidoctor-dockerized
+
 :hide-uri-scheme:
+
+:back_to_top_target: top-target
+:back_to_top_label: ⬆ Retour au début
+:back_to_top: <<main_title,{back_to_top_label}>>
 
 Génération de slides, pdf, ebook, docx à l'aide de https://docs.asciidoctor.org/asciidoctor/latest/[Asciidoctor,window=_blank], https://docs.asciidoctor.org/reveal.js-converter/latest/[RevealJs,window=_blank] et https://docs.docker.com/compose/[Docker Compose,window=_blank].
 
@@ -13,10 +19,14 @@ Ce dépôt a été généré à partir du template : https://github.com/baldir-f
 * link:docs/output.docbook.xml[Docbook,window=_blank]
 * link:docs/output.docx[Docx,window=_blank]
 
+{back_to_top}
+
 == Écrire du contenu
 
 Modifier les fichiers présents dans `01-slides`.
 Voir la section <<_ressources-asciidoctor-complementaires,Ressources Asciidoctor complémentaires>> pour démarrer avec Asciidoctor et RevealJs.
+
+{back_to_top}
 
 == Génération du contenu
 
@@ -83,7 +93,17 @@ pandoc --from docbook \
   docs/output.docbook.xml
 ----
 
-include::readme/deploiement.adoc[]
+{back_to_top}
 
-include::readme/ressources-asciidoctor-complementaires.adoc[]
+== Déploiement
 
+include::readme/deploiement.adoc[➡️ Méthodes de déploiement]
+
+{back_to_top}
+
+[#_ressources-asciidoctor-complementaires]
+== Ressources Asciidoctor complémentaires
+
+include::readme/ressources-asciidoctor-complementaires.adoc[➡️ Ressources Asciidoctor complémentaires]
+
+{back_to_top}

@@ -8,6 +8,6 @@ Pour que le déclenchement automatique lors de changements
 
 - Run https://docs.gitlab.com/ee/ci/ci_cd_for_external_repos/index.html[CI/CD for external repository]
 
-image:gitlab-ci-pages-from-github.png[]
+image:assets/gitlab-ci-pages-from-github.png[]
 
 Exemple de contenu déployé sur une Gitlab Page : https://gitlab.com/marc-bouvier/template-asciidoctor-dockerized-gitlab-pages/-/pipelines[window=_blank]

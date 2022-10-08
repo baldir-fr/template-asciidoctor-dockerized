@@ -1,5 +1,3 @@
-[#_ressources-asciidoctor-complementaires]
-== Ressources Asciidoctor complémentaires
 
 * https://github.com/asciidoctor/docker-asciidoctor/blob/main/README.adoc[docker-asciidoctor]
 * https://docs.asciidoctor.org/asciidoctor/latest/cli/:[Asciidoc CLI]

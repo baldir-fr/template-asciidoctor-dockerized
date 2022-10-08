@@ -12,4 +12,4 @@ Cette configuration génère un site jekyll à partir d'une github action préco
 **** Source : Deploy from branch
 **** Branch : `main`, `/docs`
 
-image::github-pages-setup.png[Capture d'écran du menu "Settings" de Github. Section "Pages" est sélectionnée. Build and deployment : Source : Deploy from branch. Branch : `main`, `/docs`]
+image::assets/github-pages-setup.png[Capture d'écran du menu "Settings" de Github. Section "Pages" est sélectionnée. Build and deployment : Source : Deploy from branch. Branch : `main`, `/docs`]

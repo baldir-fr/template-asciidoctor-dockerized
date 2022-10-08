@@ -1,4 +1,3 @@
-== Déploiement
 
 include::deploiement-gitlab-ci.adoc[]
 

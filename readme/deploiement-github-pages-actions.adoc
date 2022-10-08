@@ -19,4 +19,4 @@ Elle est préconfigurée pour
 *** Build and deployment
 **** Source : GitHub Actions
 
-image::github-pages-action-setup.png[Capture d'écran du menu "Settings" de Github. Section "Pages" est sélectionnée. Build and deployment : Source : Github Actions.]
+image::assets/github-pages-action-setup.png[Capture d'écran du menu "Settings" de Github. Section "Pages" est sélectionnée. Build and deployment : Source : Github Actions.]
