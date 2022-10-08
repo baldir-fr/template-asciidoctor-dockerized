@@ -1,5 +1,10 @@
 = Gitlab
 
+ifdef::env-github[]
+:imagesdir: ../readme/assets
+:docdir: ../
+endif::[]
+
 Si ce dépôt est sur Gitlab.
 
 Le pipeline link:.gitlab-ci.yml[`.gitlab-ci.yml`] est préconfigurée pour

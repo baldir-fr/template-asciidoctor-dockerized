@@ -3,6 +3,7 @@
 :imagesdir: readme/assets
 ifdef::env-github[]
 :imagesdir: ../readme/assets
+:docdir: ../
 endif::[]
 
 
