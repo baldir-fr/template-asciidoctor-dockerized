@@ -13,7 +13,7 @@ jobs:
       - name: Use asciidoctor to build content
         run: |
           make ci-adoc
-          tree
+          ls -al docs
 
   build-pandoc:
     needs: build-adoc
@@ -24,4 +24,4 @@ jobs:
       - name: Use pandoc to convert content
         run: |
           pandoc --from docbook --to docx --toc --highlight-style tango -o docs/output.docx docs/output.docbook.xml --resource-path=docs
-          tree
+          ls -al docs
