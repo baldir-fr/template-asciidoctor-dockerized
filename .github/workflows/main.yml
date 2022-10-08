@@ -27,3 +27,12 @@ jobs:
       # Runs a single command using the runners shell
       - name: Use asciidoctor to build content
         run: make ci-adoc
+  build-pandoc:
+    needs: build-adoc
+    runs-on: ubuntu-latest
+    container: pandoc/core
+    steps:
+      - uses: actions/checkout@v3
+      - name: Use pandoc to convert content
+        run: pandoc --from docbook --to docx --toc --highlight-style tango -o docs/output.docx docs/output.docbook.xml --resource-path=docs
+    
