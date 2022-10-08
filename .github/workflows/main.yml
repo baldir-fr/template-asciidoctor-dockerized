@@ -21,8 +21,3 @@ jobs:
       - uses: actions/checkout@v3
       - name: Use pandoc to convert content
         run: pandoc --from docbook --to docx --toc --highlight-style tango -o docs/output.docx docs/output.docbook.xml --resource-path=docs
-      - name: Upload GitHub Pages artifact
-        uses: actions/upload-pages-artifact@v1.0.4
-        with:
-          # Path of the directory containing the static assets.
-          path: docs/
