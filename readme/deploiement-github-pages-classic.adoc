@@ -1,14 +1,15 @@
 = Github Pages "classique"
 
-:imagesdir: readme/assets
-ifdef::env-github[]
-:imagesdir: ../readme/assets
-:docdir: /
+:link-docs: docs
+
+ifndef::is-root[]
+:link-docs: ../docs
+:imagesdir: assets
 endif::[]
 
 Dans ce mode de déploiement, le contenu devra être généré au préalable.
 
-C'est-à-dire que le contenu du dossier link:docs[`docs`] est généré sur le dépôt local du développeur, puis commit et push.
+C'est-à-dire que le contenu du dossier link:{link-docs}[`docs`] est généré sur le dépôt local du développeur, puis commit et push.
 
 Cette configuration génère un site jekyll à partir d'une github action préconfigurée.
 

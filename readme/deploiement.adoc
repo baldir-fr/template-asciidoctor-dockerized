@@ -1,4 +1,6 @@
 
+{docdir}
+
 :leveloffset: +2
 
 include::deploiement-gitlab-ci.adoc[]

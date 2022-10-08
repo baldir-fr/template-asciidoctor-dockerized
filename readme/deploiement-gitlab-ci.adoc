@@ -1,13 +1,15 @@
 = Gitlab
 
-ifdef::env-github[]
-:imagesdir: ../readme/assets
-:docdir: /
+:link-gitlab-ci-yml: .gitlab-ci.yml
+
+ifndef::is-root[]
+:link-gitlab-ci-yml: ../.gitlab-ci.yml
+:imagesdir: assets
 endif::[]
 
 Si ce dépôt est sur Gitlab.
 
-Le pipeline link:.gitlab-ci.yml[`.gitlab-ci.yml`] est préconfigurée pour
+Le pipeline link:{link-gitlab-ci-yml}[`.gitlab-ci.yml`] est préconfigurée pour
 
 * Copier les assets
 * Générer les slides au format HTML
