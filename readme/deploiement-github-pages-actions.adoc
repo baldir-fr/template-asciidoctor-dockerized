@@ -1,5 +1,7 @@
 = GitHub Pages via GitHub Actions
 
+:imagesdir: readme/assets
+
 Dans ce mode de déploiement, une Github Action est définie dans link:.github/workflows/generate-docs-and-publish-with-gitlab-pages.yml[`.github/workflows/generate-docs-and-publish-with-gitlab-pages.yml`].
 
 Elle est préconfigurée pour
