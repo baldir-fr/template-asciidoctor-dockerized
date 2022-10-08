@@ -20,7 +20,6 @@ jobs:
     runs-on: ubuntu-latest
     container: pandoc/core
     steps:
-      - uses: actions/checkout@v3
       - name: Use pandoc to convert content
         run: |
           pandoc --from docbook --to docx --toc --highlight-style tango -o docs/output.docx docs/output.docbook.xml --resource-path=docs
