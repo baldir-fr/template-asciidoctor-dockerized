@@ -1,30 +1,29 @@
-all: 01-slides 01-pdf 01-epub 01-docbook
-.PHONY: 01-slides
+all: dc-slides dc-pdf dc-epub dc-docbook
 
-01-slides:
-	docker compose run --rm build-slides; rm -rf docs/assets; cp -r 01-slides/assets docs/
-01-pdf:
+dc-slides:
+	docker compose run --rm build-slides; rm -rf docs/assets; cp -r _content/assets docs/
+dc-pdf:
 	docker compose run --rm build-pdf
-01-epub:
+dc-epub:
 	docker compose run --rm build-epub
-01-docbook:
+dc-docbook:
 	docker compose run --rm build-docbook
-01-docx:
-	pandoc --from docbook --to docx --toc --highlight-style tango -o docs/output.docx docs/output.docbook.xml --resource-path=docs
+dc-docx:
+	docker compose run --rm build-docx
 
-ci-01-slides:
-	asciidoctor-revealjs -a revealjsdir=https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.9.2 01-slides/index.adoc -o docs/index.html; rm -rf docs/assets; cp -r 01-slides/assets docs/
-ci-01-pdf:
-	asciidoctor-pdf 01-slides/index.adoc -o docs/output.pdf
-ci-01-epub:
-	asciidoctor-epub3 01-slides/index.adoc -o docs/output.epub
-ci-01-docbook:
-	asciidoctor -b docbook 01-slides/index.adoc -o docs/output.docbook.xml
-ci-01-docx:
-	pandoc --from docbook --to docx --toc --highlight-style tango -o docs/output.docx docs/output.docbook.xml --resource-path=docs
+all-no-docker: slides pdf epub docbook docx
 
-# Can be launched from docker image : `asciidoctor/docker-asciidoctor`
-ci-adoc: ci-01-slides ci-01-pdf ci-01-epub ci-01-docbook
+slides:
+	asciidoctor-revealjs -a revealjsdir=https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.9.2 _content/index.adoc -o docs/index.html; rm -rf docs/assets; cp -r _content/assets docs/
+pdf:
+	asciidoctor-pdf _content/index.adoc -o docs/output.pdf
+epub:
+	asciidoctor-epub3 _content/index.adoc -o docs/output.epub
+docbook:
+	asciidoctor -b docbook _content/index.adoc -o docs/output.docbook.xml
+docx:
+	./generate-docx.sh
 
-ci-pandoc: ci-01-docx
+# In CI, all asciidoctor make targets can be launched from the docker image : `asciidoctor/docker-asciidoctor`
+ci-adoc: slides pdf epub docbook
 

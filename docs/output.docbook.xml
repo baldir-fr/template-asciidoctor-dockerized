@@ -40,7 +40,7 @@ services:
       - "asciidoctor-revealjs"
       - "-a"
       - "revealjsdir=https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.9.2"
-      - "01-slides/index.adoc"
+      - "_content/index.adoc"
       - "-o"
       - "docs/index.html"
 
@@ -50,7 +50,7 @@ services:
       - ./:/documents/
     command:
       - "asciidoctor-pdf"
-      - "01-slides/index.adoc"
+      - "_content/index.adoc"
       - "-o"
       - "docs/output.pdf"
 
@@ -60,7 +60,7 @@ services:
       - ./:/documents/
     command:
       - "asciidoctor-epub3"
-      - "01-slides/index.adoc"
+      - "_content/index.adoc"
       - "-o"
       - "docs/output.epub"
 
@@ -72,9 +72,15 @@ services:
       - "asciidoctor"
       - "-b"
       - "docbook"
-      - "01-slides/index.adoc"
+      - "_content/index.adoc"
       - "-o"
-      - "docs/output.docbook.xml"</programlisting>
+      - "docs/output.docbook.xml"
+
+  build-docx:
+    image: "pandoc/core"
+    volumes:
+      - ./:/data/
+    entrypoint: "./generate-docx.sh"</programlisting>
 </section>
 </section>
 <section xml:id="_slide_2">

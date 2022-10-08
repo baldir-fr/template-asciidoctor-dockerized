@@ -1,0 +1,14 @@
+Temps de génération moyen observé avec Docker sur macOS
+
+[horizontal]
+6.5 Go RAM:: 37 sec
+6.75 Go RAM:: 37 sec
+7 Go RAM:: 34 sec
+7.25 Go RAM:: 17 sec
+7.50 Go RAM:: 16 sec
+7.75 Go RAM:: 16 sec
+
+Temps de génération moyen observé avec la commande pandoc installée sur la machine hôte
+
+[horizontal]
+commande `pandoc`:: < 1 sec

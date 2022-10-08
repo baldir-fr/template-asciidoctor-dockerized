@@ -406,7 +406,7 @@ services:
       - "asciidoctor-revealjs"
       - "-a"
       - "revealjsdir=https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.9.2"
-      - "01-slides/index.adoc"
+      - "_content/index.adoc"
       - "-o"
       - "docs/index.html"
 
@@ -416,7 +416,7 @@ services:
       - ./:/documents/
     command:
       - "asciidoctor-pdf"
-      - "01-slides/index.adoc"
+      - "_content/index.adoc"
       - "-o"
       - "docs/output.pdf"
 
@@ -426,7 +426,7 @@ services:
       - ./:/documents/
     command:
       - "asciidoctor-epub3"
-      - "01-slides/index.adoc"
+      - "_content/index.adoc"
       - "-o"
       - "docs/output.epub"
 
@@ -438,9 +438,15 @@ services:
       - "asciidoctor"
       - "-b"
       - "docbook"
-      - "01-slides/index.adoc"
+      - "_content/index.adoc"
       - "-o"
-      - "docs/output.docbook.xml"</code></pre></div></div></div></section></section>
+      - "docs/output.docbook.xml"
+
+  build-docx:
+    image: "pandoc/core"
+    volumes:
+      - ./:/data/
+    entrypoint: "./generate-docx.sh"</code></pre></div></div></div></section></section>
 <section id="_slide_2"><h2>Slide 2</h2><div class="slide-content"><aside class="notes"><div class="paragraph"><p>Contenu n&#8217;apparaissant pas dans les slides
 Mais dans les notes de présentation ou dans les pdf, ebook, docbook.</p></div></aside>
 <div class="paragraph"><p>Ce chapitre contient des notes de présentation.</p></div></div></section>

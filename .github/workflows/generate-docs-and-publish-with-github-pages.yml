@@ -40,7 +40,9 @@ jobs:
     runs-on: ubuntu-latest
     container: pandoc/core
     steps:
-    
+
+      - uses: actions/checkout@v3
+
       - name: Download `docs` Build Artifact
         uses: actions/download-artifact@v3.0.0
         with:
@@ -48,8 +50,7 @@ jobs:
           path: docs 
           
       - name: Generate docx
-        run: |
-          pandoc --from docbook --to docx --toc --highlight-style tango -o docs/output.docx docs/output.docbook.xml --resource-path=docs
+        run: ./generate-docx.sh
       
       - name: Upload docs-with-docx Build Artifact
         uses: actions/upload-artifact@v3.1.0

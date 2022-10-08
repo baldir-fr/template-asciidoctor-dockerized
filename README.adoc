@@ -26,7 +26,7 @@ Ce dépôt a été généré à partir du template : https://github.com/baldir-f
 
 == Écrire du contenu
 
-Modifier les fichiers présents dans link:01-slides/[`01-slides`].
+Modifier les fichiers présents dans link:_content/[`_content/`].
 
 Voir la section <<_ressources-asciidoctor-complementaires,Ressources Asciidoctor complémentaires>> pour démarrer avec Asciidoctor et RevealJs.
 
@@ -54,27 +54,27 @@ Optionnel
 
 [source,shell]
 ----
-docker compose run build-slides
+docker compose run --rm build-slides
 # Ou avec GNU Make
-make 01-slides
+make dc-slides
 ----
 
 === Génération du Pdf
 
 [source,shell]
 ----
-docker compose run --rm build-slides; rm -rf docs/assets;cp -r 01-slides/assets docs/
+docker compose run --rm build-slides; rm -rf docs/assets;cp -r _content/assets docs/
 # Ou avec GNU Make
-make 01-pdf
+make dc-pdf
 ----
 
 === Génération de l'E-book
 
 [source,shell]
 ----
-docker compose run build-epub
+docker compose run --rm build-epub
 # Ou avec GNU Make
-make 01-epub
+make dc-epub
 ----
 
 [#_generation_du_docbook]
@@ -82,26 +82,37 @@ make 01-epub
 
 [source,shell]
 ----
-docker compose run build-docbook
+docker compose run --rm build-docbook
 # Ou avec GNU Make
-make 01-docbook
+make dc-docbook
 ----
 
 === Génération docx
 
-Prérequis : avoir pandoc installé (je n'ai pas encore réussi à le faire fonctionner avec docker)
+Prérequis
+
+[WARNING]
+====
+Sur  macOS (M1), l'image Docker n'étant pas optimisée pour `linux/arm64/v8`, Docker requiert au moins 6.5 Go de RAM allouée (et 7.25 Go de RAM pour des performances convenables). Sans cette configuration, la commande échoue avec le message `Killed`.
+
+Il reste préférable de lancer la commande pandoc native qui donne des performances en dessous de la seconde (installation : `brew install pandoc`)
+
+include::readme/docx-docker-macos-m1-benchmark.adoc[]
+====
 
 Après avoir <<_generation_du_docbook,généré le docbook>>
 
 [source,shell]
 ----
-pandoc --from docbook \
-  --to docx \
-  --toc \
-  --highlight-style tango \
-  -o docs/output.docx \
-  --resource-path=docs \
-  docs/output.docbook.xml
+# Avec docker installé
+docker compose run --rm build-docx
+# Ou avec GNU Make
+make dc-docx
+
+# Avec pandoc installé localement (à privilégier sur macOS M1)
+./generate-docx.sh
+# Ou avec GNU Make
+make docx
 ----
 
 {back_to_top}

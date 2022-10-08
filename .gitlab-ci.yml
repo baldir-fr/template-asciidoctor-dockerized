@@ -14,7 +14,7 @@ build-pandoc:
     entrypoint: [ "/bin/sh", "-c" ]
   needs:
     - build-adoc
-  script: pandoc --from docbook --to docx --toc --highlight-style tango -o docs/output.docx docs/output.docbook.xml --resource-path=docs
+  script: ./generate-docx.sh
   artifacts:
     untracked: false
     expire_in: 30 days
