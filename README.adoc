@@ -1,4 +1,4 @@
-[#main_title]
+[#_main_title]
 = template-asciidoctor-dockerized
 
 :is-root: true
@@ -8,7 +8,7 @@
 
 :back_to_top_target: top-target
 :back_to_top_label: ⬆ Retour au début
-:back_to_top: <<main_title,{back_to_top_label}>>
+:back_to_top: <<_main_title,{back_to_top_label}>>
 
 [horizontal]
 Github:: image:https://github.com/baldir-fr/template-asciidoctor-dockerized/actions/workflows/generate-docs-and-publish-with-github-pages.yml/badge.svg[Generate and deploy static content to Pages,link="https://github.com/baldir-fr/template-asciidoctor-dockerized/actions/workflows/generate-docs-and-publish-with-github-pages.yml",window="_blank"]
