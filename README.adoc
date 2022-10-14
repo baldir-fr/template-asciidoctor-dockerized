@@ -40,6 +40,27 @@ include::readme/ressources-asciidoctor-complementaires.adoc[➡️ Ressources As
 * Docker Engine 19.03.0+
 * Docker compose
 
+Ou asciidoctor installé localement.
+Aperçu de commandes pour installer certains des outils.
+
+[source,shell]
+----
+# Requiert ruby 2.7 ou supérieur
+gem install asciidoctor
+gem install asciidoctor-pdf
+gem install asciidoctor-diagram
+brew install cmake
+gem install asciidoctor-epub3
+gem install asciidoctor-mathematical
+gem install asciidoctor-revealjs
+gem install asciimath
+gem install asciidoctor-bibtex
+gem install asciidoctor-kroki
+gem install asciidoctor-reducer
+----
+
+
+
 Optionnel
 
 * GNU Make
